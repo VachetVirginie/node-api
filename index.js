@@ -3,6 +3,10 @@ const app = express()
 const articles = require('./articles.json')
 
 // Middleware
+// Pour récupérer les données passées dans la requête POST, nous devons ajouter un middleware
+// à notre Node JS API afin qu'elle soit capable d'interpréter le body de la requête.
+// Ce middleware va se placer à entre l'arrivée de la requête et nos routes et exécuter son code,
+// rendant possible l'accès au body.
 app.use(express.json())
 
 app.get('/articles', (req,res) => {
